@@ -1,6 +1,7 @@
 #include <iostream>
 #include "StaticStack.h"
 #include "DynamicStack.h"
+#include "VectorBasedStack.h"
 
 using namespace std;
 
@@ -59,6 +60,26 @@ int main(int argc, char **argv) {
     s2.print();
     cout << "s3: ";
     s3.print();
+    
+    cout << "\nVector Based stack:\n";
+    VectorBasedStack s4;
+    s4.print();
+    s4.push(3);
+    s4.push(4);
+    s4.push(5);
+    s4.print();
+    s4.pop();
+    s4.print();
+    
+    cout << "\nCopied Vector Based stack:\n";
+    VectorBasedStack s5(s4);
+    s5.print();
+    s5.push(10);
+    s4.push(42);
+    cout << "s5: ";
+    s4.print();
+    cout << "s4: ";
+    s5.print();
 }
 
 

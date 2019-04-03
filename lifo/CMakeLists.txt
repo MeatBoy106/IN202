@@ -6,4 +6,6 @@ add_executable(lifo
     StaticStack.cpp
     StaticStack.h
     DynamicStack.cpp
-    DynamicStack.h)
+    DynamicStack.h
+    VectorBasedStack.cpp
+    VectorBasedStack.h)
