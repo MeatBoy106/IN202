@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #include "DynamicStack.h"
 
 using namespace std;
@@ -8,6 +9,15 @@ DynamicStack::DynamicStack(unsigned int size):
     mNextElement(0),
     mCapacity(size)
 {}
+
+DynamicStack::DynamicStack(const DynamicStack& other):
+    mBuffer(new int[other.mCapacity]),
+    mNextElement(other.mNextElement),
+    mCapacity(other.mCapacity)
+{
+    memcpy(mBuffer, other.mBuffer, mNextElement * sizeof(int));
+}
+
 
 DynamicStack::~DynamicStack()
 {
@@ -38,6 +48,14 @@ void DynamicStack::push(int n)
     }
     mBuffer[mNextElement++] = n;
 }
+
+void DynamicStack::push(int n, unsigned int rep)
+{
+    for(int i(0) ; i < rep ; ++i){
+        push(n);
+    }
+}
+
 
 unsigned int DynamicStack::size() const
 {

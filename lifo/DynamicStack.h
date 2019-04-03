@@ -11,8 +11,10 @@ class DynamicStack
     
 public:
     DynamicStack(unsigned int size);
+    DynamicStack(const DynamicStack& other);
     ~DynamicStack();
     void push(int n);
+    void push(int n, unsigned int rep);
     int pop();
     unsigned int size() const;
     void print() const;

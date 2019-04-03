@@ -1,3 +1,5 @@
+#TP2
+
 ## question 2.1.3
 
 Cela compile et c'est normal.
@@ -17,3 +19,11 @@ Un autre choix très commun en C++ est de définir les règles d'utilisation des
 La règle peut en l'occurence stipuler que la pile ne doit pas être vide lors d'un appel à pop() par exemple.
 Dans le cas contraire, le comportement n'est pas précisé et le crash fait parti des possibilités.
 C'est ce qui a été choisi dans cette correction,\.
+
+@TP3
+
+## question 1.3
+
+La copie par défaut effectuée par C++ recopie "bêtement" les pointeurs.
+En particulier, le pointeur mBuffer qui pointe sur le tableau stockant les éléments de la pile est dupliqué.
+Chaque copie de la pile possède alors en fait le même buffer et les modifications de l'une affectent l'autre.

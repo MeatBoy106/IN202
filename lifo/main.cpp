@@ -40,14 +40,25 @@ int main(int argc, char **argv) {
     cout << "\nDynamic stack (with resizing):\n";
     DynamicStack s2(10);
     s2.print();
-    for(int i(0) ; i < 30 ; ++i){
+    for(int i(0) ; i < 20 ; ++i){
         s2.push(i);
     }
     s2.print();
-    for(int i(0) ; i < 20 ; ++i){
+    for(int i(0) ; i < 15 ; ++i){
         s2.pop();
     }
     s2.print();
+    
+    cout << "\nCopied Dynamic stack:\n";
+    DynamicStack s3(s2);
+    s3.print();
+    s2.push(3);
+    s2.push(4);
+    s3.push(5);
+    cout << "s2: ";
+    s2.print();
+    cout << "s3: ";
+    s3.print();
 }
 
 
